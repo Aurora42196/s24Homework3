@@ -9,35 +9,77 @@
 #include <string>
 using namespace std;
 
-// Your declarations and implementations would go here
+///////////////////////////////////////////////////////////////////////////
+//  Function declarations
+///////////////////////////////////////////////////////////////////////////
+///
 class Investment
 {
 public:
-    
+    Investment(string name, int pp);
+    virtual ~Investment();
+    // Accessors
+    string name();
+    int purchasePrice();
 private:
-    
+    string m_name;
+    int m_price;
 };
 
-class Painting
+class Painting : public Investment
 {
 public:
+    Painting();
+    virtual ~Painting();
     
 private:
 };
 
-class Stock
+class Stock : public Investment
 {
 public:
-    
+    Stock();
+    virtual ~Stock();
 private:
 };
 
-class House
+class House : public Investment
 {
 public:
-    
+    House();
+    virtual ~House();
 private:
 };
+
+///////////////////////////////////////////////////////////////////////////
+//  Function implementations
+///////////////////////////////////////////////////////////////////////////
+///
+Investment::Investment(string name, int pp)
+ :m_name(name), m_price(pp)
+{
+    
+}
+
+Investment::~Investment()
+{
+    
+}
+
+string Investment::name()
+{
+    return m_name;
+}
+
+int Investment::purchasePrice()
+{
+    return m_price;
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+//  main and display implementations (COMMENT OUT BEFORE TURNING IT IN!)
+///////////////////////////////////////////////////////////////////////////
 
 void display(const Investment* inv)
 {

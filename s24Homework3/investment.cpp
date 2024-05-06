@@ -4,7 +4,7 @@
 //
 //  Created by Cameron Maiden on 5/5/24.
 //
-
+// (COMMENT OUT #includes BEFORE TURNING IT IN!)
 #include <iostream>
 #include <string>
 using namespace std;
@@ -18,10 +18,14 @@ class Investment
 public:
     Investment(string name, int pp);
     virtual ~Investment();
+    
     // Accessors
-    string name();
-    int purchasePrice();
+    string name() const;
+    int purchasePrice() const;
+    
 private:
+    virtual string description() const = 0;
+    virtual bool fungible() const = 0;
     string m_name;
     int m_price;
 };
@@ -29,26 +33,38 @@ private:
 class Painting : public Investment
 {
 public:
-    Painting();
+    Painting(string name, int pp);
     virtual ~Painting();
+    virtual string description();
     
 private:
+    virtual string description() const;
+    virtual bool fungible() const;
 };
 
 class Stock : public Investment
 {
 public:
-    Stock();
+    Stock(string name, int pp, string ticker);
     virtual ~Stock();
+    virtual string description();
+
 private:
+    virtual string description() const;
+    virtual bool fungible() const;
+    string m_ticker;
 };
 
 class House : public Investment
 {
 public:
-    House();
+    House(string address, int pp);
     virtual ~House();
+    virtual string description();
+
 private:
+    virtual string description() const;
+    virtual bool fungible() const;
 };
 
 ///////////////////////////////////////////////////////////////////////////
@@ -57,23 +73,36 @@ private:
 ///
 Investment::Investment(string name, int pp)
  :m_name(name), m_price(pp)
-{
-    
-}
+{}
 
 Investment::~Investment()
-{
-    
-}
+{}
 
-string Investment::name()
+string Investment::name() const
 {
     return m_name;
 }
 
-int Investment::purchasePrice()
+int Investment::purchasePrice() const
 {
     return m_price;
+}
+
+Painting::Painting(string name, int pp)
+ : Investment(name, pp)
+{}
+
+Painting::~Painting()
+{}
+
+string Painting::description() const
+{
+    return "painting";
+}
+
+bool Painting::fungible() const
+{
+    return false;
 }
 
 
@@ -91,8 +120,8 @@ void display(const Investment* inv)
 
 int main()
 {
-//    Investment* portfolio[4];
-//    portfolio[0] = new Painting("Salvator Mundi", 450300000);
+    Investment* portfolio[4];
+    portfolio[0] = new Painting("Salvator Mundi", 450300000);
 //      // Stock holdings have a name, value, and ticker symbol
 //    portfolio[1] = new Stock("Nvidia", 50000, "NVDA");
 //    portfolio[2] = new Stock("Costco", 10000, "COST");

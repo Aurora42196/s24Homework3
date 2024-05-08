@@ -47,7 +47,7 @@ int countFalse(const string a[], int n)
         return 0;
     int count = !somePredicate(a[0]) + countFalse(a+1, n-1);
 //    cerr << "value being returned: " << count << endl;
-    return count;  // This is incorrect.
+    return count;
 }
 
 // Return the subscript of the first element in the array for which
@@ -65,7 +65,7 @@ int firstFalse(const string a[], int n)
     int pos = firstFalse(a+1, n-1);
     if (pos != -1)
         return pos+1;
-    return -1;  // This is incorrect.
+    return -1;
 }
 
 // Return the subscript of the greatest string in the array (i.e.,
@@ -103,7 +103,13 @@ int indexOfMax(const string a[], int n)
 //    "john" "sonia" "sonia"
 bool has(const string a1[], int n1, const string a2[], int n2)
 {
-    return false;  // This is not always correct.
+    if (n2 == 0)
+        return true;
+    if (n1 == 0)
+        return false;
+    if (a1[0] == a2[0])
+        return has(a1+1, n1-1, a2+1, n2-1);
+    return has(a1+1, n1-1, a2, n2);  // This is not always correct.
 }
 
 //question 2 test cases
@@ -139,13 +145,13 @@ int main() {
     assert(indexOfMax(b, 2) == 1);
     assert(indexOfMax(b, 3) == 2);
     assert(indexOfMax(b, 4) == 3);
-//    string d[] = { "a", "c", "d" };
-//    assert(has(b, 4, d, 3));
-//    assert(!has(d, 3, b, 3));
-//    string e[] = {"b", "c", "d" };
-//    assert(!has(e, 3, b, 4));
-//    assert(has(b, 4, e, 3));
-//
+    string d[] = { "a", "c", "d" };
+    assert(has(b, 4, d, 3));
+    assert(!has(d, 3, b, 3));
+    string e[] = {"b", "c", "d" };
+    assert(!has(e, 3, b, 4));
+    assert(has(b, 4, e, 3));
+
     string a1[] = { "a", "b", "c", "d", "c"};
     string a2[] = { "5", "7", "6", "1", "9", "2", "8"};
     string a2b[] = { "", "", "6", "", "9", "", "8" };
@@ -174,13 +180,13 @@ int main() {
     assert(indexOfMax(a3, 6) == 5);
     assert(indexOfMax(a4, 4) == 0);
     assert(indexOfMax(a5, 2) == 0);
-//    assert(has(a1, 5, a5, 2));
-//    assert(!has(a2, 7, a2b, 7));
-//    assert(!has(a4, 4, a2b, 7));
-//    assert(has(a4, 4, a6, 2));
-//    assert(has(a4, 4, a2b, 2));
-//    assert(!has(a6, 2, a4, 4));
-//    assert(has(a1, 3, a3, 0));
+    assert(has(a1, 5, a5, 2));
+    assert(!has(a2, 7, a2b, 7));
+    assert(!has(a4, 4, a2b, 7));
+    assert(has(a4, 4, a6, 2));
+    assert(has(a4, 4, a2b, 2));
+    assert(!has(a6, 2, a4, 4));
+    assert(has(a1, 3, a3, 0));
 
     cerr << "All test cases passed!" << '\n';
     

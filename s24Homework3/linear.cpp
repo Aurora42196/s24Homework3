@@ -31,7 +31,7 @@ bool somePredicate(string s) // implementation of the predicate "s is empty"
 // least one of the array elements; return true otherwise.
 bool allFalse(const string a[], int n)
 {
-    if(n == 0)
+    if(n <= 0)
         return true;
     if (somePredicate(a[0]))
         return false;
@@ -43,7 +43,7 @@ bool allFalse(const string a[], int n)
 int countFalse(const string a[], int n)
 {
 //    cerr << "Recursive call!" << endl;
-    if(n == 0)
+    if(n <= 0)
         return 0;
     int count = !somePredicate(a[0]) + countFalse(a+1, n-1);
 //    cerr << "value being returned: " << count << endl;
@@ -55,7 +55,7 @@ int countFalse(const string a[], int n)
 // element, return -1.
 int firstFalse(const string a[], int n)
 {
-    if (n == 0)
+    if (n <= 0)
         return -1;
     if(!somePredicate(a[0]))
         return 0;
@@ -74,9 +74,9 @@ int firstFalse(const string a[], int n)
 // be considered to be in the array, return -1.
 int indexOfMax(const string a[], int n)
 {
-    if (n == 0)
+    if (n <= 0)
         return -1;
-    if (n == 1)
+    if (n <= 1)
         return 0;
     
     int p = indexOfMax(a+1, n-1);
@@ -103,9 +103,9 @@ int indexOfMax(const string a[], int n)
 //    "john" "sonia" "sonia"
 bool has(const string a1[], int n1, const string a2[], int n2)
 {
-    if (n2 == 0)
+    if (n2 <= 0)
         return true;
-    if (n1 == 0)
+    if (n1 <= 0)
         return false;
     if (a1[0] == a2[0])
         return has(a1+1, n1-1, a2+1, n2-1);

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "0ED9B983-DF92-42D6-A0B9-3A93219800A2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6E3153B-B688-4308-BF9C-BB2D15E4FBB4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "s24Homework3/linear.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "countFalse(a, n)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "E6E3153B-B688-4308-BF9C-BB2D15E4FBB4 - 78de9858bfedafe1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "countFalse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const*, int)"
+                  moduleName = "s24Homework3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameronmaiden/Desktop/Spring%202024/CS%2032/Homework%203/s24Homework3/s24Homework3/linear.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "E6E3153B-B688-4308-BF9C-BB2D15E4FBB4 - 78de9858bfedafe1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "countFalse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const*, int)"
+                  moduleName = "s24Homework3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameronmaiden/Desktop/Spring%202024/CS%2032/Homework%203/s24Homework3/s24Homework3/linear.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "E6E3153B-B688-4308-BF9C-BB2D15E4FBB4 - 78de9858bfedaf80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "countFalse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const*, int)"
+                  moduleName = "s24Homework3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cameronmaiden/Desktop/Spring%202024/CS%2032/Homework%203/s24Homework3/s24Homework3/linear.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB480B32-70C2-4C3B-8FA2-7F8C2B2F9D44"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "s24Homework3/linear.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

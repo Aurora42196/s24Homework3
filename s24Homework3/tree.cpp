@@ -100,13 +100,10 @@ void order(string a[], int n)
 {
     if (n <= 1)
         return;
-    int front;
-    int back;
+    int front, back; // references to keep track of the new reordered array
     if (a[0] >= a[1])
         separate(a, n, a[1], front, back);
-    else
-        order(a+1, n-1);
-        
+    order(a+1, n-1);
     return;
 }
 
@@ -155,11 +152,27 @@ int main() {
     cerr << "All test cases passed!" << '\n';
     
     string fruit[] = {"apple", "orange", "banana", "grape", "kiwi", "orange", "peach"};
+    string a[] = { "", "35", "ufwu9fe", "", "bakersfield" };
+
     order(fruit, 7);
     for (int i = 0; i < 7; i++)
         cerr << fruit[i] << " ";
     cerr << endl;
-        
     
+    order(num1, 3);
+    for (int i = 0; i < 3; i++)
+        cerr << num1[i] << " ";
+    cerr << endl;
+    
+//    a1[5] = "ketanji         ";
+    order(a1, 7);
+    for (int i = 0; i < 7; i++)
+        cerr << a1[i] << " ";
+    cerr << endl;
+    
+    order(a, 4);
+    for (int i = 0; i < 5; i++)
+        cerr << a[i] << " ";
+    cerr << endl;
     return 0;
 }

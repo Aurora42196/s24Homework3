@@ -4,9 +4,7 @@
 //
 //  Created by Cameron Maiden on 5/7/24.
 //
-
-#include <iostream>
-using namespace std;
+//For this part of the homework, you will turn in one file named maze.cpp that contains the Coord class (only if you use it) and the pathExists function and nothing more.
 
 bool pathExists(char maze[][10], int sr, int sc, int er, int ec)
 {
@@ -46,29 +44,3 @@ bool pathExists(char maze[][10], int sr, int sc, int er, int ec)
     return false;
 }
 
-///////////////////////////////////////////////////////////////////////////
-//  main function (COMMENT THE FUNCTION OUT BEFORE TURNING IT IN!!!!!!)
-///////////////////////////////////////////////////////////////////////////
-
-int main()
-{
-    char maze[10][10] = {
-        // 0   1   2   3   4   5   6   7   8   9
-        { 'X','X','X','X','X','X','X','X','X','X' }, // 0
-        { 'X','.','.','.','X','.','.','X','.','X' }, // 1
-        { 'X','.','X','X','X','.','.','.','.','X' }, // 2
-        { 'X','.','X','.','X','X','X','X','.','X' }, // 3
-        { 'X','X','X','.','.','.','.','.','.','X' }, // 4
-        { 'X','.','.','.','X','.','X','X','.','X' }, // 5
-        { 'X','.','X','.','X','.','.','X','.','X' }, // 6
-        { 'X','.','X','X','X','X','.','X','.','X' }, // 7
-        { 'X','.','.','X','.','.','.','X','.','X' }, // 8
-        { 'X','X','X','X','X','X','X','X','X','X' }  // 9
-    };
-    
-    if (pathExists(maze, 4,3, 1,8))
-        cout << "Solvable!" << endl;
-    else
-        cout << "Out of luck!" << endl;
-    
-}

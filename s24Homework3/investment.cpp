@@ -4,11 +4,8 @@
 //
 //  Created by Cameron Maiden on 5/5/24.
 //
-// (COMMENT OUT #includes BEFORE TURNING IT IN!)
-#include <iostream>
-#include <string>
-using namespace std;
 
+// What you'll turn in for this problem will be a file named investment.cpp containing the definitions and implementations of the four classes, and nothing more.
 ///////////////////////////////////////////////////////////////////////////
 //  Class/Function declarations
 ///////////////////////////////////////////////////////////////////////////
@@ -66,7 +63,7 @@ private:
 //  Function implementations
 ///////////////////////////////////////////////////////////////////////////
 ///
-// Investment functions
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Investment functions
 Investment::Investment(string name, int pp)
  :m_name(name), m_price(pp)
 {}
@@ -89,7 +86,8 @@ bool Investment::fungible() const
     return false;
 }
 
-// Painting functions
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  Painting functions
 Painting::Painting(string name, int price)
  : Investment(name, price)
 {
@@ -107,7 +105,7 @@ string Painting::description() const
 }
 
 
-// Stock functions
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Stock functions
 Stock::Stock(string name, int pp, string ticker)
  : Investment(name, pp), m_ticker(ticker)
 {}
@@ -127,7 +125,7 @@ bool Stock::fungible() const
     return true;
 }
 
-// House functions
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  House functions
 House::House(string address, int pp)
  :Investment(address, pp)
 {}
@@ -140,38 +138,4 @@ House::~House()
 string House::description() const
 {
     return "house";
-}
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-//  main and display implementations (COMMENT OUT BEFORE TURNING IT IN!)
-///////////////////////////////////////////////////////////////////////////
-
-void display(const Investment* inv)
-{
-    cout << inv->name();
-    if (inv->fungible())
-        cout << " (fungible)";
-    cout << ": " << inv->description() << " bought for $" << inv->purchasePrice() << endl;
-}
-
-int main()
-{
-//    Investment* ip = new Investment("name", 0);
-    Investment* portfolio[4];
-    portfolio[0] = new Painting("Salvator Mundi", 450300000);
-      // Stock holdings have a name, value, and ticker symbol
-    portfolio[1] = new Stock("Nvidia", 50000, "NVDA");
-    portfolio[2] = new Stock("Costco", 10000, "COST");
-    portfolio[3] = new House("4 Privet Drive", 670000);
-
-    for (int k = 0; k < 4; k++)
-        display(portfolio[k]);
-
-      // Clean up the investments before exiting
-    cout << "Cleaning up." << endl;
-    for (int k = 0; k < 4; k++)
-        delete portfolio[k];
 }

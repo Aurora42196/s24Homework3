@@ -4,10 +4,8 @@
 //
 //  Created by Cameron Maiden on 5/7/24.
 //
+// For this part of the homework, you will turn in one file named tree.cpp that contains the four functions above and nothing more.
 
-#include <iostream>
-#include <string>
-using namespace std;
 // Return the number of ways that all n2 elements of a2 appear
 // in the n1 element array a1 in the same order (though not
 // necessarily consecutively).  The empty sequence appears in a
@@ -105,74 +103,4 @@ void order(string a[], int n)
         separate(a, n, a[1], front, back);
     order(a+1, n-1);
     return;
-}
-
-#include <iostream>
-#include <string>
-#include <cassert>
-
-using namespace std;
-
-//use:
-
-/*
-bool somePredicate(string s) {
-    return s.empty();
-}
-*/
-
-int main() {
-    // Return the number of ways that all n2 elements of a2 appear
-    // in the n1 element array a1 in the same order (though not
-    // necessarily consecutively).  The empty sequence appears in a
-    // sequence of length n1 in 1 way, even if n1 is 0.
-    // For example, if a1 is the 7 element array
-    //    "john" "amy" "ketanji" "sonia" "amy" "ketanji" "elena"
-    // then for this value of a2            the function must return
-    //    "john" "sonia" "ketanji"                      1
-    //    "john" "ketanji" "elena"                      2
-    //    "sonia" "john" "ketanji"                      0
-    //    "amy" "ketanji" "elena"                       3
-    
-    string num1[] = {"1", "2", "3"};
-    string num2[] = {"2", "3"};
-    assert(numberOfTimesHas(num1, 3, num2, 2) == 1);
-
-    string a1[] = {"john", "amy", "ketanji", "sonia", "amy", "ketanji", "elena"};
-    string a2a[] = {"john", "sonia", "ketanji"};
-    string a2b[] = {"john", "ketanji", "elena"};
-    string a2c[] = {"sonia", "john", "ketanji"};
-    string a2d[] = {"amy", "ketanji", "elena" };
-    
-    assert(numberOfTimesHas(a1, 7, a2a, 3) == 1);
-    assert(numberOfTimesHas(a1, 7, a2b, 3) == 2);
-    assert(numberOfTimesHas(a1, 7, a2c, 3) == 0);
-    assert(numberOfTimesHas(a1, 7, a2d, 3) == 3);
-
-    cerr << "All test cases passed!" << '\n';
-    
-    string fruit[] = {"apple", "orange", "banana", "grape", "kiwi", "orange", "peach"};
-    string a[] = { "", "35", "ufwu9fe", "", "bakersfield" };
-
-    order(fruit, 7);
-    for (int i = 0; i < 7; i++)
-        cerr << fruit[i] << " ";
-    cerr << endl;
-    
-    order(num1, 3);
-    for (int i = 0; i < 3; i++)
-        cerr << num1[i] << " ";
-    cerr << endl;
-    
-//    a1[5] = "ketanji         ";
-    order(a1, 7);
-    for (int i = 0; i < 7; i++)
-        cerr << a1[i] << " ";
-    cerr << endl;
-    
-    order(a, 4);
-    for (int i = 0; i < 5; i++)
-        cerr << a[i] << " ";
-    cerr << endl;
-    return 0;
 }

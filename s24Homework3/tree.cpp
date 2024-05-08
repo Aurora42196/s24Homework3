@@ -98,9 +98,10 @@ void order(string a[], int n)
 {
     if (n <= 1)
         return;
-    int front, back; // references to keep track of the new reordered array
-    if (a[0] >= a[1])
-        separate(a, n, a[1], front, back);
-    order(a+1, n-1);
+    int frontHalf, backHalf; // references to keep track of the new reordered array
+
+    separate(a, n, a[n/2], frontHalf, backHalf);
+    order(a, frontHalf);
+    order(a+frontHalf, n-backHalf);
     return;
 }

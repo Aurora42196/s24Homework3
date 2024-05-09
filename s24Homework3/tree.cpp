@@ -21,13 +21,15 @@ int numberOfTimesHas(const string a1[], int n1, const string a2[], int n2)
 {
     if (n2 <= 0)
         return 1;
-    if (n1 <= 0)
+    if (n1 <= 0 || n2 > n1) // you can't have a subsequence of a2 in a1 if n2 > n1
         return 0;
+    if(n1 == 1 && n2 == 1 && a1[0] == a2[0]) // reduces amount of function calls for one element arrays
+        return 1;
     
     int count = 0;
     if(a1[0] == a2[0])
         count += numberOfTimesHas(a1+1, n1-1, a2+1, n2-1);
-            
+    
     return count += numberOfTimesHas(a1+1, n1-1, a2, n2);
 }
 
